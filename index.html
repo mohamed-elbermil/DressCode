@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dress-Code</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<h1>Générateur de description</h1>
+
+<section class="form">
+<form id="formulaire">
+    <label for="categorie">Catégorie</label>
+        <select id="categorie">
+            <option value="">Catégorie</option>
+            <option value="t-shirt">T-shirt</option>
+            <option value="chemise">chemise</option>
+            <option value="pull">Pull</option>
+            <option value="pantalon">Pantalon</option>
+        </select>
+
+    <label for="taille">Taille</label>
+        <select id="taille">
+            <option value="">Taille</option>
+            <option value="xs">xs</option>
+            <option value="s">s</option>
+            <option value="m">m</option>
+            <option value="l">l</option>
+        </select>
+
+    <label for="etat">Etat</label>
+        <select id="etat">
+            <option value="">État</option>
+            <option value="neuf">Neuf</option>
+            <option value="très bon état">Très bon état</option>
+            <option value="bon état">Bon état</option>
+        </select> 
+    <label for="couleur">Couleur</label>
+        <select id="couleur">
+            <option value="">Couleur</option>
+            <option value="noir">noir</option>
+            <option value="blanc">blanc</option>
+            <option value="rouge">rouge</option>
+            <option value="orange">orange</option>
+            <option value="orange">beige</option>
+            <option value="bleu">bleu</option>
+            <option value="jaune">jaune</option>
+            <option value="vert">vert</option>
+        </select> 
+</form>
+
+<audio id="audio" src="./audio/finishmp3.mp3"></audio>
+
+<h2>Description généré</h2>
+    <p id="description">Veuillez sélectionner les options ci-dessus pour générer une description.</p>
+</section>
+    
+
+<script src="./js/script.js"></script>
+</body>
+</html>
