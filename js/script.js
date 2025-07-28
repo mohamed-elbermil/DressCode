@@ -6,6 +6,7 @@ const tailleSelect = document.getElementById('taille');
 const etatSelect = document.getElementById('etat');
 const colorSelect = document.getElementById('couleur');
 const descriptionElement = document.getElementById('description');
+const copyBtn = document.getElementById('copyBtn')
 
 function updateDescription() {
     // Vêtement
@@ -39,8 +40,27 @@ Pour toutes questions ou informations supplémentaires, je suis ouvert à la dis
     }
 }
 
-// Ecouteur de changement 
+copyBtn.addEventListener('click', () => {
+    const tempElement = document.createElement('textarea');
+    tempElement.value = descriptionElement.innerText; // innerText pour exclure les balises HTML
+    document.body.appendChild(tempElement);
+    tempElement.select();
+    document.execCommand('copy');
+    document.body.removeChild(tempElement);
 
+    // Feedback visuel
+    copyBtn.textContent = 'Copié ! ✅';
+    copyBtn.classList.remove('btn-secondary');
+    copyBtn.classList.add('btn-success');
+
+    setTimeout(() => {
+        copyBtn.textContent = 'Copier la description';
+        copyBtn.classList.remove('btn-success');
+            copyBtn.classList.add('btn-secondary');
+    }, 2000);
+});
+
+// Ecouteur de changement 
 categorieSelect.addEventListener('change', updateDescription);
 tailleSelect.addEventListener('change', updateDescription);
 etatSelect.addEventListener('change', updateDescription);
