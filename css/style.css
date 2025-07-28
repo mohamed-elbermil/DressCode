@@ -53,3 +53,11 @@ h2 {
     box-shadow: 0 0 30px #00000029;
     border-radius: 11px;
 }
+
+.variable-active {
+    background: #4caf5057;
+}
+
+.variable-disabled {
+    background: red;
+}

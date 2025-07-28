@@ -5,7 +5,6 @@ const tailleSelect = document.getElementById('taille');
 const etatSelect = document.getElementById('etat');
 const colorSelect = document.getElementById('couleur');
 const descriptionElement = document.getElementById('description');
-const audio = document.getElementById('audio');
 
 function updateDescription() {
     // Vêtement
@@ -34,7 +33,6 @@ Salut, c'est ${nom}, je mesure ${taille_user} pour ${poid}kg, pour te donner une
 🚀 Envoies rapides (48h maximum après achat, sauf imprévu)<br><br>
 
 Pour toutes questions ou informations supplémentaires, je suis ouvert à la discussion et aux négociations !😊`
-audio.play();
     } else {
         descriptionElement.textContent = "Veuillez sélectionner les options ci-dessus pour générer une description."
     }
