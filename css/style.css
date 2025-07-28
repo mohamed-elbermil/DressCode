@@ -29,9 +29,14 @@ select {
 }
 
 select:hover {
-    background: #007782;
-    color: #fff;
+    background: #00778214;
+    color: #007782;
 }
+
+select option {
+    text-transform: capitalize;
+}
+
 
 #formulaire {
     background: #ffffff;
@@ -54,10 +59,13 @@ h2 {
     border-radius: 11px;
 }
 
-.variable-active {
+.variable{
     background: #4caf5057;
 }
 
-.variable-disabled {
-    background: red;
+#categorie:nth-of-type(1)::after {
+    font-family: 'Font Awesome 7 Free';
+    content: "\f03a";
+    font-weight: 900; 
+    margin-right: 5px
 }

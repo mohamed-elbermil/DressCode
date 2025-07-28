@@ -1,5 +1,6 @@
 // Récupération des éléments
 
+const marqueSelect = document.getElementById('marque');
 const categorieSelect = document.getElementById('categorie');
 const tailleSelect = document.getElementById('taille');
 const etatSelect = document.getElementById('etat');
@@ -8,6 +9,7 @@ const descriptionElement = document.getElementById('description');
 
 function updateDescription() {
     // Vêtement
+    const marque = marqueSelect.value;
     const categorie = categorieSelect.value;
     const taille = tailleSelect.value;
     const etat = etatSelect.value;
@@ -20,7 +22,7 @@ function updateDescription() {
     
     if (categorie && taille && etat && color) {
         descriptionElement.innerHTML = `
-        <p>✨Magnifique ${categorie}</p><br>
+        <p>✨Magnifique ${categorie} de la marque ${marque}</p><br>
         <ul>
             <li><strong>Etat : </strong> ${etat}</li>
             <li><strong>Couleur : </strong> ${color}</li>
@@ -29,8 +31,7 @@ function updateDescription() {
 
 Salut, c'est ${nom}, je mesure ${taille_user} pour ${poid}kg, pour te donner une idée de la coupe😉.<br><br>
 
-🚚 Envoies propres et soignés<br>
-🚀 Envoies rapides (48h maximum après achat, sauf imprévu)<br><br>
+📦 Envoi rapide et soigné (sous 48h max après achat)<br> 💬 Dispo pour questions ou négociation – n’hésite pas ! 😊<br><br>
 
 Pour toutes questions ou informations supplémentaires, je suis ouvert à la discussion et aux négociations !😊`
     } else {
