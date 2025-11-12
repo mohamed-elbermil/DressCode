@@ -1,19 +1,18 @@
 <template>
   <v-main>
-    <v-container class="d-flex align-center min-vh-100">
-        <v-container>
-          <div class="text-center mb-8">
-            <img 
-              src="https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png" 
-              alt="logo Vinted" 
-              class="mx-auto"
-              style="width: 20em; max-width: 100%;"
-            >
-            <h1 class="text-center mb-8">Générateur de description</h1>
-          </div>
-          
-          <v-container>
-            <v-row>
+    <v-container class="d-flex align-center min-vh-100" style="max-width: 1200px;">
+      <v-container class="form-container">
+        <div class="text-center mb-8">
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/commons/2/29/Vinted_logo.png" 
+            alt="logo Vinted" 
+            class="mx-auto"
+            style="width: 20em; max-width: 100%;"
+          >
+          <h1 class="text-center mb-8">Générateur de description</h1>
+        </div>
+        
+        <v-row>
               <v-col cols="12" md="6">
                 <v-select
                   v-model="marque"
@@ -89,9 +88,8 @@
                 </v-btn>
               </v-col>
             </v-row>
-          </v-container>
-        </v-container>
       </v-container>
+    </v-container>
   </v-main>
 </template>
 
@@ -112,6 +110,7 @@ const couleur = ref(null)
 const copyButtonText = ref('Copier la description')
 const copyButtonColor = ref('secondary')
 const copyButtonIcon = ref('mdi-content-copy')
+
 
 
 // Données utilisateur
@@ -179,5 +178,46 @@ const copyDescription = async () => {
 <style scoped>
 .min-vh-100 {
   min-height: 100vh;
+}
+
+.form-container {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* Empêcher l'élargissement des champs */
+:deep(.v-col) {
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+:deep(.v-select),
+:deep(.v-textarea) {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0; /* très important pour que le champ ne dépasse pas */
+  box-sizing: border-box; /* inclut padding et border dans la largeur */
+}
+
+
+:deep(.v-field) {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* S'assurer que les colonnes restent à leur largeur définie */
+:deep(.v-row) {
+  margin: 0;
+}
+
+:deep(.v-col) {
+  padding: 8px 12px;
+}
+
+@media (min-width: 960px) {
+  :deep(.v-col-md-6) {
+    flex: 0 0 39em;
+    max-width: 50%;
+  }
 }
 </style>
