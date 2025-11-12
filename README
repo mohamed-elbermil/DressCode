@@ -13,3 +13,9 @@ DressCode est un projet personnel qui a pour objectif de m’aider à automatise
 # Installation
 
 - git clone https://github.com/mohamed-elbermil/DressCode.git
+
+- cd dress-code
+
+- npm install (or npm i)
+
+- npm run dev
