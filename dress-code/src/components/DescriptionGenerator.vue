@@ -18,10 +18,14 @@
                   v-model="marque"
                   :items="marques"
                   label="Marque"
-                  prepend-inner-icon="mdi-copyright"
                   variant="outlined"
                   clearable
-                ></v-select>
+                  :class="{ 'icon-filled': isMarqueFilled }"
+                >
+                  <template #prepend-inner>
+                    <v-icon :color="isMarqueFilled ? 'success' : undefined">mdi-copyright</v-icon>
+                  </template>
+                </v-select>
               </v-col>
               
               <v-col cols="12" md="6">
@@ -29,10 +33,14 @@
                   v-model="categorie"
                   :items="categories"
                   label="Catégorie"
-                  prepend-inner-icon="mdi-format-list-bulleted"
                   variant="outlined"
                   clearable
-                ></v-select>
+                  :class="{ 'icon-filled': isCategorieFilled }"
+                >
+                  <template #prepend-inner>
+                    <v-icon :color="isCategorieFilled ? 'success' : undefined">mdi-format-list-bulleted</v-icon>
+                  </template>
+                </v-select>
               </v-col>
 
               <v-col cols="12" md="6">
@@ -40,10 +48,14 @@
                   v-model="taille"
                   :items="size"
                   label="Taille"
-                  prepend-inner-icon="mdi-resize"
                   variant="outlined"
                   clearable
-                ></v-select>
+                  :class="{ 'icon-filled': isTailleFilled }"
+                >
+                  <template #prepend-inner>
+                    <v-icon :color="isTailleFilled ? 'success' : undefined">mdi-resize</v-icon>
+                  </template>
+                </v-select>
               </v-col>
 
               <v-col cols="12" md="6">
@@ -51,10 +63,14 @@
                   v-model="etat"
                   :items="state"
                   label="Etat"
-                  prepend-inner-icon="mdi-star"
                   variant="outlined"
                   clearable
-                ></v-select>
+                  :class="{ 'icon-filled': isEtatFilled }"
+                >
+                  <template #prepend-inner>
+                    <v-icon :color="isEtatFilled ? 'success' : undefined">mdi-star</v-icon>
+                  </template>
+                </v-select>
               </v-col>
 
               <v-col cols="12" md="6">
@@ -62,10 +78,14 @@
                   v-model="couleur"
                   :items="couleurs"
                   label="Couleur"
-                  prepend-inner-icon="mdi-palette"
                   variant="outlined"
                   clearable
-                ></v-select>
+                  :class="{ 'icon-filled': isCouleurFilled }"
+                >
+                  <template #prepend-inner>
+                    <v-icon :color="isCouleurFilled ? 'success' : undefined">mdi-palette</v-icon>
+                  </template>
+                </v-select>
               </v-col>
 
               <v-col cols="12">
@@ -111,7 +131,12 @@ const copyButtonText = ref('Copier la description')
 const copyButtonColor = ref('secondary')
 const copyButtonIcon = ref('mdi-content-copy')
 
-
+// Computed pour vérifier si les champs sont remplis
+const isMarqueFilled = computed(() => !!marque.value)
+const isCategorieFilled = computed(() => !!categorie.value)
+const isTailleFilled = computed(() => !!taille.value)
+const isEtatFilled = computed(() => !!etat.value)
+const isCouleurFilled = computed(() => !!couleur.value)
 
 // Données utilisateur
 const nom = 'Mickael'
