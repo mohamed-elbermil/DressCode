@@ -39,7 +39,7 @@
               <v-col cols="12" md="6">
                 <v-select
                   v-model="taille"
-                  :items="tailles"
+                  :items="size"
                   label="Taille"
                   prepend-inner-icon="mdi-resize"
                   variant="outlined"
@@ -50,7 +50,7 @@
               <v-col cols="12" md="6">
                 <v-select
                   v-model="etat"
-                  :items="etats"
+                  :items="state"
                   label="Etat"
                   prepend-inner-icon="mdi-star"
                   variant="outlined"
@@ -97,6 +97,11 @@
 
 <script setup>
 import { ref, computed } from 'vue'
+import { brands as marques } from '@/data/brands'
+import { categories } from '@/data/categories'
+import { size } from '@/data/size'
+import { state } from '@/data/state'
+import { couleurs } from '@/data/color.js'
 
 // Données réactives
 const marque = ref(null)
@@ -108,40 +113,6 @@ const copyButtonText = ref('Copier la description')
 const copyButtonColor = ref('secondary')
 const copyButtonIcon = ref('mdi-content-copy')
 
-// Options pour les selects
-const marques = [
-  { title: 'adidas', value: 'adidas' },
-  { title: 'nike', value: 'nike' }
-]
-
-const categories = [
-  { title: 't-shirt', value: 't-shirt' },
-  { title: 'chemise', value: 'chemise' },
-  { title: 'pull', value: 'pull' },
-  { title: 'pantalon', value: 'pantalon' }
-]
-
-const tailles = [
-  { title: 'XS', value: 'xs' },
-  { title: 'S', value: 's' },
-  { title: 'M', value: 'm' },
-  { title: 'L', value: 'l' }
-]
-
-const etats = [
-  { title: 'Neuf', value: 'neuf' },
-  { title: 'Très bon état', value: 'très bon état' },
-  { title: 'Bon état', value: 'bon état' }
-]
-
-const couleurs = [
-  { title: 'Noir', value: 'noir' },
-  { title: 'Blanc', value: 'blanc' },
-  { title: 'Rouge', value: 'rouge' },
-  { title: 'Orange', value: 'orange' },
-  { title: 'Jaune', value: 'jaune' },
-  { title: 'Vert', value: 'vert' }
-]
 
 // Données utilisateur
 const nom = 'Mickael'

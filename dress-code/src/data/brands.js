@@ -1,0 +1,23 @@
+export const brands = [
+    { title: 'Adidas', value: 'adidas' },
+    { title: 'Nike', value: 'nike' },
+    { title: 'Puma', value: 'puma' },
+    { title: 'Zara', value: 'zara' },
+    { title: 'H&M', value: 'h&m' },
+    { title: 'Levi’s', value: 'levis' },
+    { title: 'Lacoste', value: 'lacoste' },
+    { title: 'Gucci', value: 'gucci' },
+    { title: 'Prada', value: 'prada' },
+    { title: 'Versace', value: 'versace' },
+    { title: 'Ralph Lauren', value: 'ralph lauren' },
+    { title: 'Calvin Klein', value: 'calvin klein' },
+    { title: 'Tommy Hilfiger', value: 'tommy hilfiger' },
+    { title: 'Under Armour', value: 'under armour' },
+    { title: 'Supreme', value: 'supreme' },
+    { title: 'The North Face', value: 'the north face' },
+    { title: 'Patagonia', value: 'patagonia' },
+    { title: 'New Balance', value: 'new balance' },
+    { title: 'Columbia', value: 'columbia' },
+    { title: 'Champion', value: 'champion' },
+  ]
+  
